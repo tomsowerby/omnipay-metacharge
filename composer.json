@@ -1,0 +1,31 @@
+{
+    "name": "omnipay/metacharge",
+    "type": "library",
+    "description": "Metacharge gateway for Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "paypoint",
+        "freedom",
+        "ima",
+        "metacharge",
+        "purchase"
+    ],
+    "autoload": {
+        "psr-0": { "Omnipay\\Metacharge\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Wed, 02 Apr 2014 13:20:35 GMT
+Server: Apache
+Content-Length: 282
+Connection: Keep-Alive
+Content-Type: text/html
+P3P: CP="CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE"
+
+intTestMode=1&intInstID=123456&strCartID=654321&strDesc=description+of+goods&fltAmount=10.00&strCurrency=GBP&strCardHolder=Joe+Bloggs&strPostcode=BA12BU&strEmail=test@paypoint.net&strCardType=VISA&strCountry=GB&intTransID=12345678&intAccountID=123456&intStatus=1&intTime=1396444836

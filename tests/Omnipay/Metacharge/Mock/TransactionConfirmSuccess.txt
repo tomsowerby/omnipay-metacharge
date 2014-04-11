@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Wed, 02 Apr 2014 13:20:35 GMT
+Server: Apache
+Content-Length: 625
+Connection: Keep-Alive
+Content-Type: text/html
+P3P: CP="CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE"
+
+intTime=1396444836&fltAPIVersion=1.3&intStatus=1&strTransType=CONFIRM&strResponse=intTime%3D1308914335%26fltOriginalAmount%3D10.00%26strOriginalCurrency%3DGBP%26intTransID%3D12345678%26intInstID%3D123456%26strCartID%3D816RONDOERON-5700%26intAccountID%3D2%26intStatus%3D1%26strDesc%3DTest%2BTransaction%26fltAmount%3D10.000%26strMessage%3D%26intCountryIP%3D1%26strTransType%3DPAYMENT%26fltFraudScore%3D0.000%26intTestMode%3D%26strCardHolder%3DRon%2BDoe%26strAddress%3D23%2BTest%2BRoad%26strCountry%3DGB%26strEmail%3Dtester%2540localhost%26strCurrency%3DGBP%26strUserIP%3D81.93.226.45%26strCity%3DTestville%26strCardType%3DVISA

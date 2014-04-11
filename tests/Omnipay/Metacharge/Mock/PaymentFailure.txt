@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Wed, 02 Apr 2014 13:20:35 GMT
+Server: Apache
+Content-Length: 56
+Connection: Keep-Alive
+Content-Type: text/html
+P3P: CP="CAO DSP COR CURa ADMa DEVa OUR IND PHY ONL UNI COM NAV INT DEM PRE"
+
+intStatus=0&strMessage=Payment+failed&intTime=1396444836
