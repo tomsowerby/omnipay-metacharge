@@ -51,11 +51,24 @@ class CreditCard extends \Omnipay\Common\CreditCard
         $this->setParameter('parentValidate', $value);
     }
 
+    /**
+     * getFax.
+     *
+     *
+     * @return string
+     */
     public function getFax()
     {
         return $this->getParameter('billingFax');
     }
 
+    /**
+     * setFax.
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
     public function setFax($value)
     {
         $this->setParameter('billingFax', $value);
@@ -64,21 +77,47 @@ class CreditCard extends \Omnipay\Common\CreditCard
         return $this;
     }
 
+    /**
+     * getBillingFax.
+     *
+     *
+     * @return string
+     */
     public function getBillingFax()
     {
         return $this->getParameter('billingFax');
     }
 
+    /**
+     * setBillingFax.
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
     public function setBillingFax($value)
     {
         return $this->setParameter('billingFax', $value);
     }
 
+    /**
+     * getShippingFax.
+     *
+     *
+     * @return string
+     */
     public function getShippingFax()
     {
         return $this->getParameter('shippingFax');
     }
 
+    /**
+     * setShippingFax.
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
     public function setShippingFax($value)
     {
         return $this->setParameter('shippingFax', $value);
