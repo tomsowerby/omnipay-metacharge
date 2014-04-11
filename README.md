@@ -10,10 +10,12 @@
 processing library for PHP 5.3+. This package implements Paypoint.net Metacharge Gateway Freedom +IMA support for Omnipay.
 
 Based on Paypoint.net Gateway +IMA [Integration Guides](http://www.paypoint.net/support/integration-guides/):
-[Gateway Freedom +IMA Integration Guide 2.3](http://www.paypoint.net/assets/guides/MCPE_Freedom+IMA_2.3.pdf)
-[Gateway Freedom +IMA 3D Secure Guide 3.1](http://www.paypoint.net/assets/guides/MCPE_Freedom+IMA_3DSecure_3.1.pdf)
+* [Gateway Freedom +IMA Integration Guide 2.3](http://www.paypoint.net/assets/guides/MCPE_Freedom+IMA_2.3.pdf)
+* [Gateway Freedom +IMA 3D Secure Guide 3.1](http://www.paypoint.net/assets/guides/MCPE_Freedom+IMA_3DSecure_3.1.pdf)
 
 This has been created based on the documentation, and has not been fully tested yet. Changes will be made as it is tested so keep an eye on revisions.
+
+If you are looking for the Paypoint Secpay Freedom product, a library seems to be in development by JustinBusschau [here](https://github.com/JustinBusschau/omnipay-secpay).
 
 *NOTE*
 An active account is required for 3D secure integration (not mentioned in 3D Secure documentation - at present version 3.1).
