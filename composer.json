@@ -1,7 +1,7 @@
 {
     "name": "omnipay/metacharge",
     "type": "library",
-    "description": "Metacharge gateway for Paypoint.net Freedom Gateway +IMA payment processing library",
+    "description": "Metacharge Paypoint.net Freedom Gateway +IMA (with 3d secure) gateway for Omnipay payment processing library",
     "keywords": [
         "gateway",
         "merchant",
@@ -12,7 +12,8 @@
         "freedom",
         "ima",
         "metacharge",
-        "purchase"
+        "purchase",
+        "3d secure"
     ],
     "homepage": "https://github.com/tomsowerby/omnipay-metacharge",
     "license": "MIT",
