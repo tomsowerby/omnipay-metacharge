@@ -39,7 +39,8 @@ class TransactionConfirmResponse extends Response
     /**
      * getResponseArray.
      *
-     * @todo Once getResponse is returning a response object, as intended, use it's code here for backwards compatibility.
+     * @todo Once getResponse is returning a response object, as intended, use it's code here for backwards
+     * compatibility.
      *
      * @return array|null
      */
