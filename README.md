@@ -3,8 +3,14 @@
 **Metacharge (by Paypoint.net) driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/tomsowerby/omnipay-metacharge.png?branch=master)](https://travis-ci.org/tomsowerby/omnipay-metacharge)
+[![Coverage Status](https://coveralls.io/repos/tomsowerby/omnipay-metacharge/badge.png?branch=master)](https://coveralls.io/r/tomsowerby/omnipay-metacharge?branch=master)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/tomsowerby/omnipay-metacharge/badges/quality-score.png?s=45f5b73c368564ea44670f1353582e52937065c1)](https://scrutinizer-ci.com/g/tomsowerby/omnipay-metacharge/)
+[![Dependency Status](https://www.versioneye.com/user/projects/5347fcf4fe0d0739ac00029d/badge.png)](https://www.versioneye.com/user/projects/5347fcf4fe0d0739ac00029d)
+
 [![Latest Stable Version](https://poser.pugx.org/omnipay/metacharge/version.png)](https://packagist.org/packages/omnipay/metacharge)
 [![Total Downloads](https://poser.pugx.org/omnipay/metacharge/d/total.png)](https://packagist.org/packages/omnipay/metacharge)
+[![Latest Unstable Version](https://poser.pugx.org/omnipay/metacharge/v/unstable.png)](https://packagist.org/packages/omnipay/metacharge)
+[![License](https://poser.pugx.org/omnipay/metacharge/license.png)](https://packagist.org/packages/omnipay/metacharge)
 
 [Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements Paypoint.net Metacharge Gateway Freedom +IMA support for Omnipay.
