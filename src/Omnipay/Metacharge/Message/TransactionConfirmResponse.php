@@ -20,6 +20,8 @@ class TransactionConfirmResponse extends Response
      * that would have been returned in response to the original transaction request. Please
      * refer to each of the prior API response sections to review the format of these.
      *
+     * @todo this should be changed to return a Response object that matches the original sent.
+     *
      * @return array|null
      */
     public function getResponse()
@@ -32,5 +34,17 @@ class TransactionConfirmResponse extends Response
         parse_str(urldecode($this->data['strResponse']), $responseArray);
 
         return $responseArray;
+    }
+
+    /**
+     * getResponseArray.
+     *
+     * @todo Once getResponse is returning a response object, as intended, use it's code here for backwards compatibility.
+     *
+     * @return array|null
+     */
+    public function getResponseArray()
+    {
+        return $this->getResponse();
     }
 }

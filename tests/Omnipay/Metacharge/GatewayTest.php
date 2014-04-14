@@ -226,10 +226,7 @@ class GatewayTest extends GatewayTestCase
         $response = $request->send();
 
         $this->assertTrue($response->isSuccessful());
-        $this->assertTrue(is_array($response->getResponse()));
-
-        $originalResponse = $response->getResponse();
-        $this->assertEquals('12345678', $originalResponse['intTransID']);
+        $this->assertNotNull($response->getResponseArray());
 
         $this->assertNull($response->getMessage());
     }
