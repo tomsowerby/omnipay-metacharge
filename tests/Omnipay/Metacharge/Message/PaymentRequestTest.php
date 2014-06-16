@@ -146,6 +146,34 @@ class PaymentRequestTest extends TestCase
     }
 
     /**
+     * testCardValidationExceptionWith3DSecureNumberAndNotInTestMode.
+     *
+     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     */
+    public function testCardValidationExceptionWith3DSecureNumberAndNotInTestMode()
+    {
+        //Set the 3DS test number
+        $this->paymentOptions['card']->setNumber(1234123412341234);
+
+        $request = $this->gateway->purchase($this->paymentOptions);
+        $request->getData();
+    }
+
+    public function testCardValidationWith3DSecureNumberAndInTestMode()
+    {
+        //Set the 3DS test number
+        $this->paymentOptions['card']->setNumber(1234123412341234);
+
+        $this->gateway->setTestMode(true);
+
+        $request = $this->gateway->purchase($this->paymentOptions);
+        $data = $request->getData();
+
+        $this->assertSame('1234123412341234', $data['strCardNumber']);
+        $this->assertSame('VISA', $data['strCardType']);
+    }
+
+    /**
      * testBrandThrowsExceptionSetWithUnknownNumber.
      *
      * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException

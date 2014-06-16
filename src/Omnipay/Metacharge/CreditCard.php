@@ -32,7 +32,8 @@ class CreditCard extends \Omnipay\Common\CreditCard
 
         if ($this->getParameter('parentValidate') !== false) {
             parent::validate();
-        } elseif (!is_null($this->getNumber())) { //Check number is valid even if we aren't doing parent validation
+        } elseif (!is_null($this->getNumber()) && $this->getParameter('ignoreNumber') !== true) {
+        //Check number is valid even if we aren't doing parent validation
             if (!Helper::validateLuhn($this->getNumber())) {
                 throw new InvalidCreditCardException('Card number is invalid');
             }
@@ -49,6 +50,18 @@ class CreditCard extends \Omnipay\Common\CreditCard
     public function setParentValidate($value)
     {
         $this->setParameter('parentValidate', $value);
+    }
+
+    /**
+     * setIgnoreNumber.
+     * Used for 3DS tests, only testable using invalid card number.
+     *
+     * @param $value
+     *
+     */
+    public function setIgnoreNumber($value)
+    {
+        $this->setParameter('ignoreNumber', $value);
     }
 
     /**

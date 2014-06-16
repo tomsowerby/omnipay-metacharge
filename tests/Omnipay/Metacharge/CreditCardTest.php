@@ -26,6 +26,28 @@ class CreditCardTest extends TestCase
         $card->validate('not-existing');
     }
 
+    /**
+     * testExceptionWhenInvalidNumberExcludingParent.
+     *
+     * @expectedException \Omnipay\Common\Exception\InvalidCreditCardException
+     */
+    public function testExceptionWhenInvalidNumberExcludingParent()
+    {
+        $card = new CreditCard();
+        $card->setNumber(1);
+        $card->setParentValidate(false);
+        $card->validate();
+    }
+
+    public function testNoExceptionWhenInvalidNumberExcludingParentAndIgnoreNumber()
+    {
+        $card = new CreditCard();
+        $card->setNumber(1);
+        $card->setParentValidate(false);
+        $card->setIgnoreNumber(true);
+        $card->validate();
+    }
+
     public function testCanSetFax()
     {
         $gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());

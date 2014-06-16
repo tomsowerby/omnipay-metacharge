@@ -25,7 +25,8 @@ If you are looking for the Paypoint Secpay Freedom product, a library seems to b
 
 *NOTE*
 An active account is required for 3D secure integration (not mentioned in 3D Secure documentation - at present version 3.1).
-The test account always returns results as though the card is not enrolled.
+Also, 3D secure needs to be activated on the account by Secpay staff.
+An account in test mode, or without 3D secure activated, always returns results as though the card is not enrolled.
 
 ## Installation
 
@@ -70,7 +71,7 @@ repository.
         'lastName' => 'Bloggs',
         'email' => 'test@paypoint.net',
         'postcode' => 'BA12BU',
-        'number' => '4111111111111111',
+        'number' => '1234123412341234', // This number MUST be used for 3D secure testing (based on conversation with Secpay technical team).
         'expiryMonth' => '06',
         'expiryYear' => '14',
         'cvv' => '707',
@@ -132,6 +133,7 @@ repository.
 
 * Pass through parameters. Supported by Metacharge using prefix "PT_"
 * Unit tests cover everything, but could be more extensive. Please report bugs and ideally provide a failing test.
+* Full 3D Secure testing
 
 ## Support
 
