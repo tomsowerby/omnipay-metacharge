@@ -1,2 +1,131 @@
+filter:
+    paths: [src/*]
+    excluded_paths: [vendor/*, tests/*]
+before_commands:
+    - 'composer install --dev --prefer-source'
 tools:
     external_code_coverage: true
+    php_analyzer: true
+    php_mess_detector:
+        enabled: true
+        config:
+            code_size_rules:
+                cyclomatic_complexity:  true
+                npath_complexity:     true
+                excessive_method_length:  true
+                excessive_class_length:  true
+                excessive_parameter_list:  true
+                excessive_public_count:  true
+                too_many_fields:      true
+                too_many_methods:     true
+                excessive_class_complexity:  true
+            design_rules:
+                number_of_class_children:  true
+                depth_of_inheritance:  true
+                coupling_between_objects:  true
+            unused_code_rules:
+                unused_local_variable:  true
+                unused_private_method:  true
+                unused_formal_parameter:  true
+            controversial_rules:
+                camel_case_class_name:  true
+                camel_case_property_name:  true
+                camel_case_method_name:  true
+                camel_case_parameter_name:  true
+                camel_case_variable_name:  true
+    php_code_sniffer:
+        enabled: true
+        config:
+            standard: PSR2
+            sniffs:
+                generic:
+                    code_analysis:
+                        unused_function_parameter_sniff:  true
+                        for_loop_with_test_function_call_sniff:  true
+                        unconditional_if_statement_sniff:  true
+                        empty_statement_sniff:  true
+                        unnecessary_final_modifier_sniff:  true
+                        for_loop_should_be_while_loop_sniff:  true
+                        useless_overriding_method_sniff:  true
+                        jumbled_incrementer_sniff:  true
+                    classes:
+                        duplicate_class_name_sniff:  true
+                    white_space:
+                        disallow_tab_indent_sniff:  true
+                        scope_indent_sniff:
+                            spaces_per_level:     4
+                        disallow_space_indent_sniff:  true
+                    php:
+                        disallow_short_open_tag_sniff:  true
+                        sapi_usage_sniff:     true
+                        no_silenced_errors_sniff:  true
+                        deprecated_functions_sniff:  true
+                        upper_case_constant_sniff:  true
+                        closing_php_tag_sniff:  true
+                        forbidden_functions_sniff:  true
+                        lower_case_constant_sniff:  true
+                        character_before_php_opening_tag_sniff:  true
+                        lower_case_keyword_sniff:  true
+                    formatting:
+                        multiple_statement_alignment_sniff:  true
+                        no_space_after_cast_sniff:  true
+                        space_after_cast_sniff:  true
+                        disallow_multiple_statements_sniff:  true
+                    functions:
+                        function_call_argument_spacing_sniff:  true
+                        opening_function_brace_kernighan_ritchie_sniff:  true
+                        opening_function_brace_bsd_allman_sniff:  true
+                        call_time_pass_by_reference_sniff:  true
+                    files:
+                        one_interface_per_file_sniff:  true
+                        end_file_newline_sniff:  true
+                        line_length_sniff:
+                            max_length:           80
+                        inline_html_sniff:    true
+                        byte_order_mark_sniff:  true
+                        end_file_no_newline_sniff:  true
+                        one_class_per_file_sniff:  true
+                        line_endings_sniff:   true
+                    version_control:
+                        subversion_properties_sniff:  true
+                    commenting:
+                        fixme_sniff:          true
+                        todo_sniff:           true
+                    control_structures:
+                        inline_control_structure_sniff:  true
+                    strings:
+                        unnecessary_string_concat_sniff:  true
+                    naming_conventions:
+                        camel_caps_function_name_sniff:  true
+                        constructor_name_sniff:  true
+                        upper_case_constant_name_sniff:  true
+                    metrics:
+                        cyclomatic_complexity_sniff:  true
+                        nesting_level_sniff:  true
+                psr2:
+                    classes:
+                        property_declaration_sniff:  true
+                        class_declaration_sniff:  true
+                    methods:
+                        method_declaration_sniff:  true
+                    namespaces:
+                        namespace_declaration_sniff:  true
+                        use_declaration_sniff:  true
+                    files:
+                        end_file_newline_sniff:  true
+                    control_structures:
+                        control_structure_spacing_sniff:  true
+                        switch_declaration_sniff:  true
+                        else_if_declaration_sniff:  true
+    sensiolabs_security_checker: true
+    php_code_coverage: true
+    php_pdepend: true
+    php_loc:
+        enabled: true
+        excluded_dirs: [vendor, tests]
+    php_cpd:
+        enabled: true
+        excluded_dirs: [vendor, tests]
+    php_cs_fixer:
+    	enabled: true
+        config: { level: psr2 }
