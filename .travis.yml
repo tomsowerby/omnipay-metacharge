@@ -8,10 +8,11 @@ php:
 before_script:
   - composer self-update
   - composer install -n --dev --prefer-source
+  - wget https://scrutinizer-ci.com/ocular.phar
 
 script:
-  - phpunit --coverage-clover "clover"
+  - phpunit --coverage-clover=coverage.clover
 
 after_script:
   - vendor/bin/coveralls -v
-  - curl -sL https://bit.ly/artifact-uploader | php
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
