@@ -127,5 +127,5 @@ tools:
         enabled: true
         excluded_dirs: [vendor, tests]
     php_cs_fixer:
-    	enabled: true
+        enabled: true
         config: { level: psr2 }
