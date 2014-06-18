@@ -36,7 +36,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "omnipay/metacharge": "1.0.*@dev"
+        "omnipay/metacharge": "~2.0"
     }
 }
 ```
@@ -93,6 +93,7 @@ repository.
     // Is it an immediate success, with no 3D secure?
     var_dump($response->isSuccessful()); // bool
     var_dump($response->getData()); // array
+    // Process the payment here.
 
     // Is it a 3d secure redirect?
     if($response->isRedirect()) {
@@ -103,12 +104,12 @@ repository.
         $s3DMerchantData = $response->getS3DMerchantData();
         //Save these
 
-        //Send user off
+        //Send user off to the 3D secure page
         $response->redirect();
     }
 
     /**
-     * On your 3d secure response capture page
+     * On your 3d secure response capture page, set by $gateway->set3DSecureResponseUrl
      */
 
     // A lot of these are the values that we saved above
@@ -120,11 +121,14 @@ repository.
         's3DMerchantData' => $s3DMerchantData, //Or $_POST['MD'] should be the same
     );
 
+    // Any validation of the session that you might need to do here.
+
+    // Resume the request
     $request = $gateway->s3DAuthorisationResume($s3dParams); /* @var $request \Omnipay\Metacharge\Message\S3DAuthorisationResumeRequest */
 
     $response = $request->send(); /* @var $response \Omnipay\Metacharge\Message\PaymentResponse */
 
-    // Is it a success, after 3D secure?
+    // Is it a success, after 3D secure? Note, this response is the same as an initially successful payment.
     var_dump($response->isSuccessful()); // bool
     var_dump($response->getData()); // array
 
@@ -133,7 +137,6 @@ repository.
 
 * Pass through parameters. Supported by Metacharge using prefix "PT_"
 * Unit tests cover everything, but could be more extensive. Please report bugs and ideally provide a failing test.
-* Full 3D Secure testing
 
 ## Support
 
