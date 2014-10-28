@@ -159,20 +159,6 @@ class PaymentRequestTest extends TestCase
         $request->getData();
     }
 
-    public function testCardValidationWith3DSecureNumberAndInTestMode()
-    {
-        //Set the 3DS test number
-        $this->paymentOptions['card']->setNumber(1234123412341234);
-
-        $this->gateway->setTestMode(true);
-
-        $request = $this->gateway->purchase($this->paymentOptions);
-        $data = $request->getData();
-
-        $this->assertSame('1234123412341234', $data['strCardNumber']);
-        $this->assertSame('VISA', $data['strCardType']);
-    }
-
     /**
      * testBrandThrowsExceptionSetWithUnknownNumber.
      *
@@ -187,5 +173,17 @@ class PaymentRequestTest extends TestCase
 
         // No number set, strCardType should be null
         $request->getData();
+    }
+
+    public function testCardTypeTranslationWithMastercard()
+    {
+        $this->paymentOptions['card']->setNumber('5555555555554444');
+        $this->gateway->setTestMode(true);
+
+        $request = $this->gateway->purchase($this->paymentOptions);
+        $data = $request->getData();
+
+        $this->assertSame('5555555555554444', $data['strCardNumber']);
+        $this->assertSame('MC', $data['strCardType']);
     }
 }
