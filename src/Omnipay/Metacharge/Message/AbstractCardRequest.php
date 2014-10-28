@@ -21,12 +21,6 @@ abstract class AbstractCardRequest extends AbstractCustomerRequest
      */
     public function getData()
     {
-        // Hack for 3D Secure testing
-        if ($this->getTestMode() == true && $this->getCard()->getNumber() == '1234123412341234') {
-            $this->getCard()->setParentValidate(false);
-            $this->getCard()->setIgnoreNumber(true);
-        }
-
         $data = parent::getData();
 
         $data['strCardNumber'] = $this->getCard()->getNumber();
@@ -39,11 +33,13 @@ abstract class AbstractCardRequest extends AbstractCustomerRequest
         $data['intCV2'] = $this->getCard()->getCvv();
         $data['strIssueNo'] = $this->getCard()->getIssueNumber();
 
-        // Hack for 3D Secure testing
-        if ($this->getTestMode() == true && $this->getCard()->getNumber() == '1234123412341234') {
-            $data['strCardType'] = 'VISA';
-        } elseif (!is_null($this->getCard()->getBrand())) {
+        if (!is_null($this->getCard()->getBrand())) {
             $data['strCardType'] = strtoupper($this->getCard()->getBrand());
+        }
+
+        // Metacharge need MC not MASTERCARD
+        if (in_array('strCardType', $data) && $data['strCardType'] == 'MASTERCARD') {
+            $data['strCardType'] = 'MC';
         }
 
         /*
