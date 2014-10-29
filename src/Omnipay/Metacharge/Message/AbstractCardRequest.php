@@ -38,7 +38,7 @@ abstract class AbstractCardRequest extends AbstractCustomerRequest
         }
 
         // Metacharge need MC not MASTERCARD
-        if (in_array('strCardType', $data) && $data['strCardType'] == 'MASTERCARD') {
+        if (array_key_exists('strCardType', $data) && $data['strCardType'] == 'MASTERCARD') {
             $data['strCardType'] = 'MC';
         }
 
